@@ -1,0 +1,6 @@
+Display property
+.display-types{
+    display: inline;
+    display: inline-block;
+    display: block;
+}

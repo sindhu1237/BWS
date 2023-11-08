@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML 201 Intermediate</title>
+    <link rel="shortcut icon" href="images/favicons/download.jpeg" type="image/jpeg">
+</head>
+<body>
+    <a href="https://www.youtube.com" target="_top">click here</a>
+    <h1 id="top">Welcome to HTML Intermediate</h1>
+    <a href="#bottom">Scroll to bottom of page</a>
+    <p> 
+        <span style="text-decoration: underline">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+         Vero, adipisci? </span>Quia eos vitae sint quo assumenda voluptatibus 
+        asperiores esse, voluptas laborum ducimus 
+        dolorum ab porro id, officia magnam! Ea, 
+        minus!
+    </p>
+    <img src="images/planet-volumes.jpg" alt="planet-volumes">
+    <!-- <table border="1" width="100%">
+        <tr>
+            <td>First Cell here</td>
+            <td>Second cell here</td>
+        </tr>
+        <tr>
+            <td>Row 2, cell 1</td>
+            <td>Row 2, cell 2</td>
+        </tr>
+    </table> -->
+    <table border="1" width="50%">
+        <tbody>
+            <tr>
+                <th colspan="2">
+                     Welcome to Website
+                </th>
+            </tr> 
+            <tr>
+                <td width="20%">
+                    <h3>Navigation</h3>
+                </td>
+                <td width="30%">
+                    <h3>Content</h3>
+                </td>    
+            </tr>
+            
+        </tbody>
+    </table>
+    <style>
+        .classNameHere {
+            padding: 40px;
+            color: white;
+            background-color: black;
+        }
+        .classone {
+            padding: 40px;
+            color: pink;
+            background-color: blue;
+        }
+        .uppercase {
+            text-transform: uppercase;
+            
+        }
+        #testingId{
+            border: 15px solid red;
+        }
+    </style>
+    <div class="classNameHere uppercase" >
+         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore explicabo quia perspiciatis quas ex. Aut, sunt. Soluta perferendis repudiandae adipisci at sapiente placeat dignissimos velit perspiciatis commodi, error quos dolore.
+    </div>
+    <div id="testingId" class="classone" >
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore explicabo quia perspiciatis quas ex. Aut, sunt. Soluta perferendis repudiandae adipisci at sapiente placeat dignissimos velit perspiciatis commodi, error quos dolore.
+   </div>
+   <div class="classNameHere" >
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore explicabo quia perspiciatis quas ex. Aut, sunt. Soluta perferendis repudiandae adipisci at sapiente placeat dignissimos velit perspiciatis commodi, error quos dolore.
+    </div>
+    <div class="classone uppercase">
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore explicabo quia perspiciatis quas ex. Aut, sunt. Soluta perferendis repudiandae adipisci at sapiente placeat dignissimos velit perspiciatis commodi, error quos dolore.
+    </div>
+    <h3> Formatting code </h3>
+    <pre>
+        some       stuff    here   &lt;b&gt;This is bold &lt;/b&gt;
+        Second     line     here
+    </pre>
+    <p>
+        <code>Lorem     ipsum dolor sit amet     consectetur </code>codeadipisicing elit. Laboriosam nihil, nulla quidem minus voluptatum corporis laborum necessitatibus. Accusantium, eligendi totam voluptates voluptatibus, dolores, amet voluptatum eveniet voluptate placeat veniam neque.
+    </p>
+    <h2> Forms </h2>
+    <form action="" method="get">
+        <div>
+            <input type="text"  value="" placeholder="Enter your name">
+            <input  required name="email" type="email"  value="hello" placeholder="Enter your name">
+            <input type="text" value="Hello World" placeholder="Enter your name">
+        </div>
+        
+        <h5> text area</h5>
+        <div>
+            <textarea name="" id="" cols="30" rows="5">Text in here
+                Whitespace does matter in here.Textarea has cols and rows while input type as text doesnt have and the message goes in b/w tags while text takes message in value.
+            </textarea>
+            <textarea required name="address" cols="30" rows="5" placeholder="Wow a placeholderrrr"></textarea>
+        </div>
+        <h5> DropDown menu</h5>
+        <div>
+            <select name="selected_option">
+                <option value="" disabled="disabled"> - Disabled -</option>
+                <option value="value1"> This is value 1</option>
+                <option value="value2"> This is value 2</option>
+                <option value="Default-is selected" selected="selected">Selected by Default</option>
+            </select>
+        </div>
+        <h5>Buttons</h5>
+        <div>
+            <button type="button">Click me!</button>
+            <button type="reset">reset</button>
+            <button type="menu">Menu</button>
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+    <!-- <form method="get" action="somepage.html">
+        <input type="text">
+        <textarea name="" id="" col="30" rows="10"></textarea>
+        <button type="submit">Submit this form</button>
+    </form> -->
+    <h3>Embeds</h3>
+    
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/zucT0UaZj1A?si=5kcK2QPHfcHP-LpF" title="YouTube video player" frameborder="5"  allowfullscreen></iframe>
+    <div id="bottom">
+        <a href="#top">Back to top</a>
+        &copy; 2022
+        <!-- <sup>&copy;</sup>
+        <sub>2022</sub> -->
+    </div>
+    <!-- <h3 id="bottom">This is bottom of the page</h3> -->
+    <a href="https://www.youtube.com" target="_blank"><img src="images/favicons/download.jpeg"></a>
+    <br>
+    <a href="mailto:sindhu.rudraboina@gmail.com">send email</a>
+</body>
+</html>

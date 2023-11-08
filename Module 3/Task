@@ -1,0 +1,26 @@
+Create a page layout using tables
+Navigation should have a link to another existing page
+Content should have an image, a paragraph, a header, and a youtube video
+Footer should have a copyright symbol
+
+
+
+
+Notes :
+1. Span tag is an inline container used to mark up taxt or document.
+2.The target="_blank" attribute from the anchor tag since this causes the linked document to open in a new window tab.
+_blank,
+_parent,
+_self,
+_top.
+
+
+3. How to use image as a link ?
+By placing the <img >tag inside the anchor tag.
+<a href="www.youtbe.com"><img src="download.jpeg"></a>
+
+
+Links
+https://overapi.com/html
+https://overapi.com/html-dom
+https://htmlcheatsheet.com/

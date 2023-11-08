@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 201</title>
+    <style>
+        .box{
+           border: 5px solid red;
+           height: 200px;
+           width: 200px;
+           padding: 10px;
+           box-sizing: content-box;
+           outline: 5px solid green;
+           outline-offset: 10px;
+        }
+        .boxShadow{
+            font-size: 40px;
+            text-shadow: 10px 10px 0 red;
+        }
+        .box1{
+            width: 300px;
+            height: 300px;
+            /* border: 10px solid black; */
+            position: relative;
+            top: 30px;
+            left: 30px;
+        }
+        .second-box{
+            position: absolute;
+            /* border: 3px solid blue; */
+            top: 0;
+            /* bottom: 0; */
+            right: 0;
+            width: 50%;
+            height: 50%;
+            background: black;
+        }
+        .boxsticky{
+            position: sticky;
+            background-color: #f5f5f5;
+            border-bottom: 2px solid #ccc;
+            padding: 20px;
+            top: 0;
+            color: black;
+        }
+        .scrollbox{
+            width: 300px;
+            height: 300px;
+            border: 10px solid black;
+            overflow: scroll;
+            /* margin-left: auto;
+            margin-right: auto; */
+            margin: 50px auto;
+        }
+        .parentbox{
+            height: 20px;
+            border: 1px solid blue;
+        }
+        
+        /* #parent .parentbox + .parentbox{
+            background-color: red;
+        }
+        #parent .parentbox ~ .parentbox{
+            background-color: black;
+        } */
+        .parentbox:not(.dontselectme){
+            background-color: blue;
+        }
+        .parentbox:hover {
+            background-color: gray;
+        }
+        .selectorBox{
+            width: 300px;
+            height: 300px;
+            border: 10px solid black;
+            margin: 50px auto;
+            position: relative;
+            background-color: black;
+        } 
+        .selectorBox::before{
+            content: ' ';
+            display: block;
+            border: 10px solid red;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: -30px;
+            left: -30px;
+            z-index: -1;
+        }
+        .selectorBox::after{
+            content: ' ';
+            display: block;
+            border: 10px solid blue;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            right: -30px;
+            bottom: -30px;
+            z-index: 10;
+        }
+        /* a{
+            text-decoration: none;
+            color: black;
+            position: relative;
+        }
+        a::before{
+            content: ' ';
+            width: 100%;
+            height: 4px;
+            background-color: yellow;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            z-index: -1;
+        }
+        a:hover::before{
+            height: 14px;
+        } */
+        p::first-letter{
+            font-size: 50px;
+            float: left;
+            margin: 5px;
+        }
+        p::first-line{
+            font-weight: bold;
+        }
+        a{
+            background-color: white;
+            display: inline-block;
+            padding: 5px 15px;
+            color: black;
+            text-decoration: none;
+            border: 1px solid black;
+            transition: background-color 2.2s,
+                        color 0.5s,
+                        padding 0.4s;
+        }
+        a:hover{
+            background-color: black;
+            color: white;
+            padding: 10px 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- <div class="box">
+        Hello World!
+    </div>
+    <br>
+    <br>
+
+    <div class="boxShadow">
+        Hello World!!!
+    </div>
+    
+    <div class="box1">
+
+        <div class="second-box">
+            Top right
+        </div>
+
+
+    </div>
+    <div style="background-color: black; color: white;">
+        <div class="boxsticky">Section 1</div>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A eaque et iure ipsum delectus voluptate, ea fugiat praesentium reiciendis. Id eaque vero a distinctio mollitia voluptatum? Nesciunt provident quam optio!</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A eaque et iure ipsum delectus voluptate, ea fugiat praesentium reiciendis. Id eaque vero a distinctio mollitia voluptatum? Nesciunt provident quam optio!</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A eaque et iure ipsum delectus voluptate, ea fugiat praesentium reiciendis. Id eaque vero a distinctio mollitia voluptatum? Nesciunt provident quam optio!</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A eaque et iure ipsum delectus voluptate, ea fugiat praesentium reiciendis. Id eaque vero a distinctio mollitia voluptatum? Nesciunt provident quam optio!</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A eaque et iure ipsum delectus voluptate, ea fugiat praesentium reiciendis. Id eaque vero a distinctio mollitia voluptatum? Nesciunt provident quam optio!</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A eaque et iure ipsum delectus voluptate, ea fugiat praesentium reiciendis. Id eaque vero a distinctio mollitia voluptatum? Nesciunt provident quam optio!</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A eaque et iure ipsum delectus voluptate, ea fugiat praesentium reiciendis. Id eaque vero a distinctio mollitia voluptatum? Nesciunt provident quam optio!</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A eaque et iure ipsum delectus voluptate, ea fugiat praesentium reiciendis. Id eaque vero a distinctio mollitia voluptatum? Nesciunt provident quam optio!</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A eaque et iure ipsum delectus voluptate, ea fugiat praesentium reiciendis. Id eaque vero a distinctio mollitia voluptatum? Nesciunt provident quam optio!</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A eaque et iure ipsum delectus voluptate, ea fugiat praesentium reiciendis. Id eaque vero a distinctio mollitia voluptatum? Nesciunt provident quam optio!</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A eaque et iure ipsum delectus voluptate, ea fugiat praesentium reiciendis. Id eaque vero a distinctio mollitia voluptatum? Nesciunt provident quam optio!</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A eaque et iure ipsum delectus voluptate, ea fugiat praesentium reiciendis. Id eaque vero a distinctio mollitia voluptatum? Nesciunt provident quam optio!</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A eaque et iure ipsum delectus voluptate, ea fugiat praesentium reiciendis. Id eaque vero a distinctio mollitia voluptatum? Nesciunt provident quam optio!</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A eaque et iure ipsum delectus voluptate, ea fugiat praesentium reiciendis. Id eaque vero a distinctio mollitia voluptatum? Nesciunt provident quam optio!</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A eaque et iure ipsum delectus voluptate, ea fugiat praesentium reiciendis. Id eaque vero a distinctio mollitia voluptatum? Nesciunt provident quam optio!</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A eaque et iure ipsum delectus voluptate, ea fugiat praesentium reiciendis. Id eaque vero a distinctio mollitia voluptatum? Nesciunt provident quam optio!</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A eaque et iure ipsum delectus voluptate, ea fugiat praesentium reiciendis. Id eaque vero a distinctio mollitia voluptatum? Nesciunt provident quam optio!</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A eaque et iure ipsum delectus voluptate, ea fugiat praesentium reiciendis. Id eaque vero a distinctio mollitia voluptatum? Nesciunt provident quam optio!</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A eaque et iure ipsum delectus voluptate, ea fugiat praesentium reiciendis. Id eaque vero a distinctio mollitia voluptatum? Nesciunt provident quam optio!</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A eaque et iure ipsum delectus voluptate, ea fugiat praesentium reiciendis. Id eaque vero a distinctio mollitia voluptatum? Nesciunt provident quam optio!</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A eaque et iure ipsum delectus voluptate, ea fugiat praesentium reiciendis. Id eaque vero a distinctio mollitia voluptatum? Nesciunt provident quam optio!</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A eaque et iure ipsum delectus voluptate, ea fugiat praesentium reiciendis. Id eaque vero a distinctio mollitia voluptatum? Nesciunt provident quam optio!</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A eaque et iure ipsum delectus voluptate, ea fugiat praesentium reiciendis. Id eaque vero a distinctio mollitia voluptatum? Nesciunt provident quam optio!</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A eaque et iure ipsum delectus voluptate, ea fugiat praesentium reiciendis. Id eaque vero a distinctio mollitia voluptatum? Nesciunt provident quam optio!</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A eaque et iure ipsum delectus voluptate, ea fugiat praesentium reiciendis. Id eaque vero a distinctio mollitia voluptatum? Nesciunt provident quam optio!</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A eaque et iure ipsum delectus voluptate, ea fugiat praesentium reiciendis. Id eaque vero a distinctio mollitia voluptatum? Nesciunt provident quam optio!</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A eaque et iure ipsum delectus voluptate, ea fugiat praesentium reiciendis. Id eaque vero a distinctio mollitia voluptatum? Nesciunt provident quam optio!</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A eaque et iure ipsum delectus voluptate, ea fugiat praesentium reiciendis. Id eaque vero a distinctio mollitia voluptatum? Nesciunt provident quam optio!</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A eaque et iure ipsum delectus voluptate, ea fugiat praesentium reiciendis. Id eaque vero a distinctio mollitia voluptatum? Nesciunt provident quam optio!</p>
+    </div>
+    <div style="background-color: blue; color: white;">
+        <div class="boxsticky">Section 2</div>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A eaque et iure ipsum delectus voluptate, ea fugiat praesentium reiciendis. Id eaque vero a distinctio mollitia voluptatum? Nesciunt provident quam optio!</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A eaque et iure ipsum delectus voluptate, ea fugiat praesentium reiciendis. Id eaque vero a distinctio mollitia voluptatum? Nesciunt provident quam optio!</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A eaque et iure ipsum delectus voluptate, ea fugiat praesentium reiciendis. Id eaque vero a distinctio mollitia voluptatum? Nesciunt provident quam optio!</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A eaque et iure ipsum delectus voluptate, ea fugiat praesentium reiciendis. Id eaque vero a distinctio mollitia voluptatum? Nesciunt provident quam optio!</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A eaque et iure ipsum delectus voluptate, ea fugiat praesentium reiciendis. Id eaque vero a distinctio mollitia voluptatum? Nesciunt provident quam optio!</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A eaque et iure ipsum delectus voluptate, ea fugiat praesentium reiciendis. Id eaque vero a distinctio mollitia voluptatum? Nesciunt provident quam optio!</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A eaque et iure ipsum delectus voluptate, ea fugiat praesentium reiciendis. Id eaque vero a distinctio mollitia voluptatum? Nesciunt provident quam optio!</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A eaque et iure ipsum delectus voluptate, ea fugiat praesentium reiciendis. Id eaque vero a distinctio mollitia voluptatum? Nesciunt provident quam optio!</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A eaque et iure ipsum delectus voluptate, ea fugiat praesentium reiciendis. Id eaque vero a distinctio mollitia voluptatum? Nesciunt provident quam optio!</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A eaque et iure ipsum delectus voluptate, ea fugiat praesentium reiciendis. Id eaque vero a distinctio mollitia voluptatum? Nesciunt provident quam optio!</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A eaque et iure ipsum delectus voluptate, ea fugiat praesentium reiciendis. Id eaque vero a distinctio mollitia voluptatum? Nesciunt provident quam optio!</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A eaque et iure ipsum delectus voluptate, ea fugiat praesentium reiciendis. Id eaque vero a distinctio mollitia voluptatum? Nesciunt provident quam optio!</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A eaque et iure ipsum delectus voluptate, ea fugiat praesentium reiciendis. Id eaque vero a distinctio mollitia voluptatum? Nesciunt provident quam optio!</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A eaque et iure ipsum delectus voluptate, ea fugiat praesentium reiciendis. Id eaque vero a distinctio mollitia voluptatum? Nesciunt provident quam optio!</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A eaque et iure ipsum delectus voluptate, ea fugiat praesentium reiciendis. Id eaque vero a distinctio mollitia voluptatum? Nesciunt provident quam optio!</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A eaque et iure ipsum delectus voluptate, ea fugiat praesentium reiciendis. Id eaque vero a distinctio mollitia voluptatum? Nesciunt provident quam optio!</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A eaque et iure ipsum delectus voluptate, ea fugiat praesentium reiciendis. Id eaque vero a distinctio mollitia voluptatum? Nesciunt provident quam optio!</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A eaque et iure ipsum delectus voluptate, ea fugiat praesentium reiciendis. Id eaque vero a distinctio mollitia voluptatum? Nesciunt provident quam optio!</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A eaque et iure ipsum delectus voluptate, ea fugiat praesentium reiciendis. Id eaque vero a distinctio mollitia voluptatum? Nesciunt provident quam optio!</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A eaque et iure ipsum delectus voluptate, ea fugiat praesentium reiciendis. Id eaque vero a distinctio mollitia voluptatum? Nesciunt provident quam optio!</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A eaque et iure ipsum delectus voluptate, ea fugiat praesentium reiciendis. Id eaque vero a distinctio mollitia voluptatum? Nesciunt provident quam optio!</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A eaque et iure ipsum delectus voluptate, ea fugiat praesentium reiciendis. Id eaque vero a distinctio mollitia voluptatum? Nesciunt provident quam optio!</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A eaque et iure ipsum delectus voluptate, ea fugiat praesentium reiciendis. Id eaque vero a distinctio mollitia voluptatum? Nesciunt provident quam optio!</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A eaque et iure ipsum delectus voluptate, ea fugiat praesentium reiciendis. Id eaque vero a distinctio mollitia voluptatum? Nesciunt provident quam optio!</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A eaque et iure ipsum delectus voluptate, ea fugiat praesentium reiciendis. Id eaque vero a distinctio mollitia voluptatum? Nesciunt provident quam optio!</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A eaque et iure ipsum delectus voluptate, ea fugiat praesentium reiciendis. Id eaque vero a distinctio mollitia voluptatum? Nesciunt provident quam optio!</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A eaque et iure ipsum delectus voluptate, ea fugiat praesentium reiciendis. Id eaque vero a distinctio mollitia voluptatum? Nesciunt provident quam optio!</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A eaque et iure ipsum delectus voluptate, ea fugiat praesentium reiciendis. Id eaque vero a distinctio mollitia voluptatum? Nesciunt provident quam optio!</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A eaque et iure ipsum delectus voluptate, ea fugiat praesentium reiciendis. Id eaque vero a distinctio mollitia voluptatum? Nesciunt provident quam optio!</p>
+    </div> -->
+    <!-- <div class="scrollbox">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores debitis provident, velit quod, quos amet itaque ut quia a vitae temporibus soluta ipsa harum. Nobis atque eos laudantium architecto distinctio?
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores debitis provident, velit quod, quos amet itaque ut quia a vitae temporibus soluta ipsa harum. Nobis atque eos laudantium architecto distinctio?
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores debitis provident, velit quod, quos amet itaque ut quia a vitae temporibus soluta ipsa harum. Nobis atque eos laudantium architecto distinctio?
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores debitis provident, velit quod, quos amet itaque ut quia a vitae temporibus soluta ipsa harum. Nobis atque eos laudantium architecto distinctio?
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores debitis provident, velit quod, quos amet itaque ut quia a vitae temporibus soluta ipsa harum. Nobis atque eos laudantium architecto distinctio?
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores debitis provident, velit quod, quos amet itaque ut quia a vitae temporibus soluta ipsa harum. Nobis atque eos laudantium architecto distinctio?
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores debitis provident, velit quod, quos amet itaque ut quia a vitae temporibus soluta ipsa harum. Nobis atque eos laudantium architecto distinctio?
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores debitis provident, velit quod, quos amet itaque ut quia a vitae temporibus soluta ipsa harum. Nobis atque eos laudantium architecto distinctio?
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores debitis provident, velit quod, quos amet itaque ut quia a vitae temporibus soluta ipsa harum. Nobis atque eos laudantium architecto distinctio?
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores debitis provident, velit quod, quos amet itaque ut quia a vitae temporibus soluta ipsa harum. Nobis atque eos laudantium architecto distinctio?
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores debitis provident, velit quod, quos amet itaque ut quia a vitae temporibus soluta ipsa harum. Nobis atque eos laudantium architecto distinctio?
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores debitis provident, velit quod, quos amet itaque ut quia a vitae temporibus soluta ipsa harum. Nobis atque eos laudantium architecto distinctio?
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores debitis provident, velit quod, quos amet itaque ut quia a vitae temporibus soluta ipsa harum. Nobis atque eos laudantium architecto distinctio?
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores debitis provident, velit quod, quos amet itaque ut quia a vitae temporibus soluta ipsa harum. Nobis atque eos laudantium architecto distinctio?
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores debitis provident, velit quod, quos amet itaque ut quia a vitae temporibus soluta ipsa harum. Nobis atque eos laudantium architecto distinctio?
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores debitis provident, velit quod, quos amet itaque ut quia a vitae temporibus soluta ipsa harum. Nobis atque eos laudantium architecto distinctio?
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores debitis provident, velit quod, quos amet itaque ut quia a vitae temporibus soluta ipsa harum. Nobis atque eos laudantium architecto distinctio?
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores debitis provident, velit quod, quos amet itaque ut quia a vitae temporibus soluta ipsa harum. Nobis atque eos laudantium architecto distinctio?
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores debitis provident, velit quod, quos amet itaque ut quia a vitae temporibus soluta ipsa harum. Nobis atque eos laudantium architecto distinctio?
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores debitis provident, velit quod, quos amet itaque ut quia a vitae temporibus soluta ipsa harum. Nobis atque eos laudantium architecto distinctio?
+
+    </div> -->
+    <!-- <div id="parent">
+        <div class="parentbox"></div>
+        <div class="parentbox dontselectme"></div>
+        <div class="parentbox"></div>
+        <div class="parentbox"></div>
+        <div class="parentbox"></div>
+        <div class="parentbox"></div>
+        <div class="parentbox"></div>
+        <div class="parentbox"></div>
+        <div class="parentbox"></div>
+        <div class="parentbox"></div>
+        <div class="parentbox"></div>
+        <div class="parentbox"></div>
+    </div> -->
+    <!-- <div class="parentbox">This is not a blue coloured box</div> -->
+    <!-- <div class="selectorBox"></div>
+    Lorem ipsum dolor sit,<a href="#"> amet consectetur adipisicing </a>elit. Veniam, sed. Velit amet, praesentium nisi soluta reprehenderit laudantium tempore iure omnis maxime odit nihil eius. Dignissimos incidunt nulla quos deleniti a. -->
+    <a href="#" class="button">Click me</a>
+</body>
+</html>

@@ -1,0 +1,25 @@
+What is CSS ?
+CSS stabds for Cascading Style Sheets
+HTML i sbackbone of your website but its ugly.
+CSS lets us create beautiful and modern looking websites.
+CSS does not control the functionality of the site.So if you want to click a button and have it do something that will require JavaScript.
+CSS can be written in 3 different ways.
+    Inline with the style HTML attribute
+    Internal with the <style> element
+    External .css file
+
+How does CSS work?
+CSS is simply a layer on top of HTML.
+We'll always need to write HTML to make a website,but technicall CSS is optional
+
+
+
+CSS syntax overview
+writing class selectors video 8
+
+
+
+
+tasks
+https://rocketman.learnwagtail.com
+recreate navigation and hero section using what we have learned

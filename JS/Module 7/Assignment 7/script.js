@@ -9,7 +9,7 @@ let dogYears = document.getElementById("dogyears"); // Fill this in.
 
 name.innerHTML = "<strong> sindhu </Strong>";
 age.innerHTML = "<strong> 22 </strong>";
-dogYears.innerText = "<strong> 11 </strong>";
+dogYears.innerHTML = "<strong> 11 </strong>";
 // document.getElementById("name").innerHTML = "sindhu";
 
 function showDogYears(age) {

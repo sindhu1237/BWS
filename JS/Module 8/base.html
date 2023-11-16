@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        // ****** MDN ===>  MOZILLA DEVELOPER NETWORK  ******
+        // window.onload = function () {
+        //     alert("Page is loaded");
+        // }
+        // beforeunload
+        // The main use case for this event is to trigger a browser-generated confirmation dialog that asks users to confirm if they really want to leave the page when they try to close or reload it, or navigate somewhere else. This is intended to help prevent loss of unsaved data.
+        window.onbeforeunload = function() {
+            console.log("Before unload");
+            return "Are you sure you want to return?";
+        }
+        let num = "0";
+        console.log(typeof(num));
+        console.log( num == "0");
+        console.log(num == 0);
+        function name(){
+            const names = "sindhu";
+        }
+        // const names = "Indhu"
+        // console.log(names);  --->  return Uncaught ReferenceError: names is not defined
+        // ***** CALL BACK FUNCTION  ******
+        function doAThing() {
+            //50 lines here
+            //name = "Kalob"
+            //
+        }
+        console.log("waiting 2.5 seconds")
+        setTimeout(function() {
+            console.log("Do this thing in here")
+        }, 2500)
+        console.log("The last line");
+
+        // ***** Timeouts && intervals  *****
+        let count = 0;
+        // setInterval(function() {
+        //     console.log('chacking something ...')
+        //     count++;
+        //     if(count == 3){
+        //         console.log("That was last one");
+        //     }
+        // },2000);
+        // setting the interval as a variable
+        const myInterval = setInterval(function() {
+            console.log('checking something ...')
+            count++;
+
+            if(count == 3){
+                //unset the interval
+                clearInterval(myInterval);
+                console.log("That was last one");
+            }
+        },3000);
+        console.log("sindhu ", myInterval);
+        // ****** WHILE LOOP  *******
+        let numb = 0;
+        while(numb < 5) {
+            console.log(numb);
+            numb++;
+        }
+
+        /* ****** DATE FORMATTING    ******    */
+        let d = new Date(2025, 0, 15); //Month starts from 0
+        console.log(d);
+        console.log("full year", d.getFullYear());
+        console.log("date", d.getDate());
+        const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May','Jun', 
+        'July', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+        console.log(months[d.getMonth()]);
+         /* DESTRUCTING ARRAYS && OBJECTS  */
+         const month = ['January', 'February', 'March']
+         const[ jan, feb] = month;
+         console.log(jan, feb);
+         const days = ['Monday', 'Tuesday', 'Saturday']
+         const[ mon, tue, wed, thur] = days;
+         console.log(mon, tue, wed, thur);
+        const person3 = {
+            "name1" : "Sindhu",
+            "instagram": "@sindhusmiley",
+            "age" : 23
+        }
+        const { name1, instagram } = person3
+        console.log(name1, instagram);
+        console.log("object",person3);
+        
+        /*      DELETING OBJECT PROPERTIES    
+        WE CAN DELETE OBJECT PROPERTIES, BUT WE CANNOT DELETE
+        ENTIRE VARIABLES IN JS*/
+        const person4 = {
+            'name':"Sindhu",
+            'age':23
+        }
+        delete person4;
+        console.log("the person4 object has been tried to delete", person4);
+        /*  PROPER JAVASCRIPT MATH */
+        console.log(Math.round(4.6));
+        console.log(Math.round(4.4));
+        console.log(Math.pow(8,2));
+        console.log(Math.sqrt(9));
+        console.log(Math.max(1,2,1237,37)); // can take any number of parameters by both max and min
+
+        //GENERATING RANDOM NUMBERS IN JS
+        console.log( "Random number between 0 & 1 is multiplied by 100",Math.random() * 100);
+        // // RANDOM NUMBER GUESSING GAME
+        // let value = 13;
+        // while(true){
+        //     let val= prompt("Guess the number");
+        //     val = Number(val);
+        //     const randomNum = Math.ceil(Math.random() * 10);
+        //     if(val === randomNum){
+        //         alert("YOU WIN");
+        //         break;
+        //     } else {
+        //         console.log("You guessed ", val, "but the correct number was", randomNum)
+        //     }
+        // }
+
+        /*  HANDLING ERRORS WITH TRY CATCH FINALLY */
+        const number = 10;
+        try {
+            number = number + 20;
+            // throw "custom error";
+            // console.log("A thing in here");
+        } catch( error) {
+            console.warn("ERROR LOGGING:", error);
+        } finally {
+            console.log("The final number is", number)
+        }
+        console.log("SHOW ME!!!!!");
+
+    </script>
+</body>
+</html>
